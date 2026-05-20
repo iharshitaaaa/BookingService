@@ -3,5 +3,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-    PORT: 3002
+    PORT: process.env.PORT,
+    FLIGHT_SERVICE_PATH: process.env.FLIGHT_SERVICE_PATH
 }

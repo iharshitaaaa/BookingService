@@ -1,11 +1,11 @@
-const exress = require('express');
+const express = require('express');
 const {PORT} = require('./config/server-config');
 const bodyParser = require('body-parser');
 const apiRoutes = require('./routes/index');
 const db = require('./models/index');
 const DB_SYNC = true;
 
-const app = exress();
+const app = express();
 
 const setUpAndStartServer = () =>{
 
@@ -14,7 +14,7 @@ const setUpAndStartServer = () =>{
 
     app.use('/api', apiRoutes);
     
-    app.listen(PORT, () =>{
+    app.listen(PORT, async () =>{
         console.log(`Server started at Port: ${PORT}`);
 
         if(process.env.DB_SYNC){
